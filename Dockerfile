@@ -21,4 +21,4 @@ RUN pip install xlrd xlwt xlutils gdata unittest2 oauth2client==1.5.2 gspread
 
 #USER developer
 #ENV HOME /home/developer
-CMD /usr/bin/firefox
+#CMD /usr/bin/firefox
