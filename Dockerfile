@@ -2,13 +2,19 @@ FROM ubuntu:16.04
 
 RUN apt-get update && apt-get upgrade -y
 
-RUN apt-get install apt-utils git-core subversion sudo -y
+RUN apt-get install apt-utils git-core subversion sudo wget -y
 
 RUN apt-get install -y firefox python-pip
 
 RUN pip install --upgrade pip
 
 RUN pip install xlrd xlwt xlutils gdata unittest2 oauth2client==1.5.2 gspread
+
+RUN wget http://www.hoboes.com/library/downloads/makeHTML.py.gz
+
+RUN gunzip makeHTML.py.gz
+
+RUN cp makeHTML.py /usr/lib/python2.7/
 
 # Replace 1000 with your user / group id
 
@@ -24,3 +30,4 @@ USER developer
 ENV HOME /home/developer
 
 CMD /usr/bin/firefox
+
