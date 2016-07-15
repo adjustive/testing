@@ -1,5 +1,7 @@
 FROM ubuntu:16.04
 
+RUN rm -rf /var/cache/apt/
+
 RUN apt-get update && apt-get upgrade -y
 
 RUN apt-get install apt-utils git-core subversion sudo wget -y
@@ -29,5 +31,5 @@ RUN export uid=1000 gid=1000 && \
 USER developer
 ENV HOME /home/developer
 
-CMD /usr/bin/firefox
+CMD /usr/bin/firefox -no-remote
 
