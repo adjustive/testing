@@ -3,7 +3,11 @@
 
 	docker run -ti --rm -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/home/developer/.Xauthority --net=host --pid=host --ipc=host firefox
 
+## SSH / Bash access
 
+	docker exec -it  happy_poitras bash
+
+where happy_poitras is name of container or it cab be container id
 
 ## Random Docker command
 
